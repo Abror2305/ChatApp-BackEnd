@@ -1,0 +1,25 @@
+{
+  "name": "chatapp",
+  "version": "0.0.1",
+  "description": "Chat application",
+  "main": "index.js",
+  "scripts": {
+    "test": "nodemon index.js",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Abror2305/ChatApp.git"
+  },
+  "keywords": [
+    "chat",
+    "app",
+    "httpapp"
+  ],
+  "author": "Abror Alisherov",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Abror2305/ChatApp/issues"
+  },
+  "homepage": "https://github.com/Abror2305/ChatApp#readme"
+}
