@@ -1,0 +1,38 @@
+[
+  {
+    "userid": 1,
+    "message": "Hello World!",
+    "date": "2022-03-10T17:06:41.444Z",
+    "fromId": 2
+  },
+  {
+    "userid": 1,
+    "message": "Salom",
+    "date": "2022-03-10T17:06:41.444Z",
+    "fromId": 3
+  },
+  {
+    "userid": 1,
+    "message": "Qalesan?",
+    "date": "2022-03-10T17:06:41.444Z",
+    "fromId": 4
+  },
+  {
+    "userid": 2,
+    "message": "Assalomu Alaykum",
+    "date": "2022-03-10T17:16:59.846Z",
+    "fromId": 1
+  },
+  {
+    "userid": 3,
+    "message": "Salom",
+    "date": "2022-03-10T17:16:59.846Z",
+    "fromId": 1
+  },
+  {
+    "userid": 3,
+    "message": "Kim bu?",
+    "date": "2022-03-10T17:16:59.846Z",
+    "fromId": 2
+  }
+]
