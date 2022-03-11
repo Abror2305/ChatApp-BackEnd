@@ -1,32 +1,50 @@
 [
-  {
-    "user_id": 1,
-    "username": "Abror",
-    "age": 15,
-    "password": "qwertyuiop"
-  },
-  {
-    "user_id": 2,
-    "username": "Muhammad",
-    "age": 15,
-    "password": "hafiz123"
-  },
-  {
-    "user_id": 3,
-    "username": "Azor",
-    "age": 16,
-    "password": "123456789"
-  },
-  {
-    "user_id": 4,
-    "username": "Xayrulloh",
-    "age": 19,
-    "password": "Xayrulloh2002"
-  },
-  {
-    "user_id": 5,
-    "username": "Scott",
-    "age": 28,
-    "password": "freedom9393"
-  }
+    {
+        "user_id": 1,
+        "username": "Abror",
+        "age": 15,
+        "password": "qwertyuiop"
+    },
+    {
+        "user_id": 2,
+        "username": "Muhammad",
+        "age": 15,
+        "password": "hafiz123"
+    },
+    {
+        "user_id": 3,
+        "username": "Azor",
+        "age": 16,
+        "password": "123456789"
+    },
+    {
+        "user_id": 4,
+        "username": "Xayrulloh",
+        "age": 19,
+        "password": "Xayrulloh2002"
+    },
+    {
+        "user_id": 5,
+        "username": "Scott",
+        "age": 28,
+        "password": "freedom9393"
+    },
+    {
+        "user_id": 6,
+        "username": "Alisherov",
+        "age": 12,
+        "password": "12345678"
+    },
+    {
+        "user_id": 7,
+        "username": "AbrorAli",
+        "age": "12",
+        "password": "Abror2006"
+    },
+    {
+        "user_id": 8,
+        "username": "AbrorAli2",
+        "age": "12",
+        "password": "12345678"
+    }
 ]
