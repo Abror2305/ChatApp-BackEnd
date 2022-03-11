@@ -38,7 +38,7 @@ const server = (req, res) => {
 		return res.end(file)
 	}
 
-	if(controllerFunctions[method][pathname]) {
+	if(controllerFunctions[method]?.[pathname]) {
 		return controllerFunctions[method][pathname](req, res)
 	} else {
 		const extname = path.extname(pathname)
