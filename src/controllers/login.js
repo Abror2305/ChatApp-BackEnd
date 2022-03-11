@@ -1,5 +1,7 @@
+'use strict'
 const {read,hash} = require("../util")
-async function POST (req,res){
+
+module.exports = async (req, res) => {
     try {
         res.setHeader("Access-Control-Allow-Origin", "*")
         let {username, password} = await req.body
@@ -19,29 +21,20 @@ async function POST (req,res){
         let user = users.find(el => el.username === username && el.password === password)
 
         if (user) {
-            // res.writeHead(200, {
-            //     "Content-Type": "application/json"
-            // })
-            res.setHeader("Content-Type", "application/json")
-            return res.end(JSON.stringify({user_id: hash(`${user.user_id}`)}))
+            let userid = {
+                status:200,
+                user_id: hash(user.user_id)}
+            return res.json(userid)
         }
-        // res.writeHead(200, {
-        //     "Content-Type": "application/json"
-        // })
-        res.setHeader("Content-Type", "application/json")
 
-        return res.end(JSON.stringify({
+        return res.json({
+            status: 401,
             message: "Incorrect username or password"
-        }))
-    }
-    catch (e) {
-        // res.writeHead(200,{"Content-Type": "application/json"})
-        res.setHeader("Content-Type", "application/json")
-        return res.end(JSON.stringify({
+        })
+    } catch (e) {
+        return res.json({
+            status: 401,
             message: e.message
-        }))
+        })
     }
-}
-module.exports = {
-    POST
 }
