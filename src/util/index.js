@@ -48,10 +48,32 @@ function write(fileName,data){
     }
 }
 
+/**
+ *
+ * @param token{string}
+ * @returns {number}
+ */
+function isUser(token){
+    try{
+        let user = unhash(token)
+        console.log(user)
+        let users = read("users")
+        user = users.find(el => el.user_id === user.user_id && el.password === user.password)
+        if(!user){
+            return 0
+        }
+        return user.user_id
+    }
+    catch (e) {
+        return 0
+    }
+
+}
 
 module.exports = {
     hash,
     unhash,
     read,
-    write
+    write,
+    isUser
 }

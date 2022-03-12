@@ -7,7 +7,7 @@ const controllerFunctions = {}
 const globalValues = {}
 
 const server = (req, res) => {
-	const { pathname, query } = urlModule.parse(req.url.toLowerCase(), true)
+	const { pathname, query } = urlModule.parse(req.url, true)
 	const method = req.method.toUpperCase()
 
 	req.query = query

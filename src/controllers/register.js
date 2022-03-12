@@ -19,19 +19,23 @@ module.exports = async (req,res) => {
         if (isNaN(+age) || age < 12 || age > 100) {
             throw new Error("Age must be greater than 12 and less than 100")
         }
-
+        username = username.trim().toLowerCase()
+        age = Number(age)
         let newUser = {
             user_id: users.at(-1)?.user_id + 1 || 1,
             username,
             age,
-            password
+            password: hash(password)
         }
         users.push(newUser)
 
         write("users", users)
         res.json({
             status: 200,
-            user_id: hash(newUser.user_id)
+            user: hash(JSON.stringify({
+                user_id: newUser.user_id,
+                password: newUser.password
+            }))
         })
     }
     catch (e) {
