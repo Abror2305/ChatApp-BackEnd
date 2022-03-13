@@ -8,8 +8,8 @@ module.exports = async (req, res) => {
 
         username = username.trim().toLowerCase()
         password = password.trim()
-        if (!username || username.length > 50 || username.length < 3) {
-            throw new Error("Invalid Username")
+        if(!(/^(?=[a-zA-Z0-9._]{3,20}$)(?!.*[_.]{2})[^_.].*[^_.]$/.test(username))){
+            throw new Error("Incorect username")
         }
         if (!password || password.length > 20 || password.length < 6) {
             throw new Error("Invalid Password")

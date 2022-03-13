@@ -28,5 +28,23 @@
         "username": "abror23",
         "age": "20",
         "password": "eyJhbGciOiJIUzI1NiJ9.MTIzNDU2Nzg.458CqIonMwyIY1HELMpP9xhH0A8RkfynZ-_fJWKS0Ro"
+    },
+    {
+        "user_id": 6,
+        "username": "scott",
+        "age": 28,
+        "password": "eyJhbGciOiJIUzI1NiJ9.c2NvdDk0OTQ.6SkErzFmF6qjsqGwCnQ_SowCSZStbUnC3wVX0-pZV3w"
+    },
+    {
+        "user_id": 7,
+        "username": "user",
+        "age": 20,
+        "password": "eyJhbGciOiJIUzI1NiJ9.MTIzNDU2Nzg.458CqIonMwyIY1HELMpP9xhH0A8RkfynZ-_fJWKS0Ro"
+    },
+    {
+        "user_id": 8,
+        "username": "asror",
+        "age": 14,
+        "password": "eyJhbGciOiJIUzI1NiJ9.MTIzNDU2Nzg.458CqIonMwyIY1HELMpP9xhH0A8RkfynZ-_fJWKS0Ro"
     }
 ]

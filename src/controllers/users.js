@@ -4,6 +4,7 @@ const {read,isUser} = require("./../util")
 
 const GET = async (req, res) => {
     try{
+        res.setHeader("Access-Control-Allow-Origin", "*")
         let users = read("users")
 
         let user = req.query
@@ -29,6 +30,7 @@ const GET = async (req, res) => {
         res.json({
             status:200,
             users: forUser,
+            user_id,
             username
         })
     }
