@@ -30,7 +30,6 @@ const GET = async (req, res) => {
         res.json({
             status:200,
             users: forUser,
-            user_id,
             username
         })
     }
@@ -38,7 +37,7 @@ const GET = async (req, res) => {
         return res.json({
             status:403,
             message: e.message
-        })
+        },403)
     }
 }
 module.exports = {

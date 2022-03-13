@@ -10,5 +10,9 @@
   {
     "user_id": 3,
     "contact": [1,2]
+  },
+  {
+    "user_id": 4,
+    "contact": [1]
   }
 ]

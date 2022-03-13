@@ -27,8 +27,9 @@ const server = (req, res) => {
 		})	
 	}
 
-	res.json = function (value) {
+	res.json = function (value,status=200) {
 		res.setHeader('Content-Type', 'application/json')
+		res.statusCode = status
 		return res.end(JSON.stringify(value))
 	}
 
