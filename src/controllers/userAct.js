@@ -20,11 +20,10 @@ const GET = async (req, res) => {
         })
 
     } catch (e) {
-        res.statusCode = 403
         return res.json({
             // status:403,
             message: e.message
-        })
+        },403)
     }
 }
 module.exports = {

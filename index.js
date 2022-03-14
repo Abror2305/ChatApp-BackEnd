@@ -15,7 +15,7 @@ app.get("/users",users.GET)
 app.get("/messages",messages.GET)
 app.post("/login", login)
 app.post("/register",register)
-
+app.post("/messages",messages.POST)
 
 app.listen(PORT,() => {
     console.log("Server is running at http://192.168.1.2:"+PORT)

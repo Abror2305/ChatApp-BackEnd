@@ -70,9 +70,27 @@ function isUser(token){
 
 }
 
+/**
+ *
+ * @param id{Number}
+ * @returns {boolean}
+ */
+function isCorrectId(id){
+    try {
+        let users = read("user")
+        if(!id || isNaN(+id)) return false
+        let user = users.find(el => el.user_id === id)
+        return !!user;
+    }
+    catch (e){
+        return false
+    }
+}
+
 module.exports = {
     hash,
     unhash,
+    isCorrectId,
     read,
     write,
     isUser

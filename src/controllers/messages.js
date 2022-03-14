@@ -1,6 +1,6 @@
 'use strict'
 
-const {read, isUser} = require("../util");
+const {read, isUser,isCorrectId, write} = require("../util");
 
 function GET(req, res){
     try {
@@ -28,6 +28,60 @@ function GET(req, res){
     }
 }
 
+async function POST(req,res){
+    try{
+        res.setHeader("Access-Control-Allow-Origin", "*")
+        let {user,message,from_id} = await req.body
+        message = message?.trim()
+        let user_id = isUser(user)
+
+        if(!user_id) throw new Error("Not User")
+        if(!message) throw new Error("Message is required")
+        if(isCorrectId(from_id)) throw new Error("Invalid from_id")
+        if(user_id===from_id) throw new Error("You can't write to yourself")
+
+        let chats = read("chats")
+
+        let newChat = {
+            user_id,
+            message,
+            date: new Date(),
+            from_id,
+        }
+        chats.push(newChat)
+
+        let activities = read("userAct")
+
+        activities = addAct(activities,user_id,from_id)
+        activities = addAct(activities,from_id,user_id)
+
+        write("chats",chats)
+        write("userAct",activities)
+        res.json({
+            message: "ok"
+        })
+    }
+    catch (e){
+        res.json({
+            message:e.message},400)
+    }
+}
+function addAct(data,user_id,from_id){
+    let senderUser = data.find(el =>el.user_id ===user_id)
+
+    if(!senderUser){
+        data.push({
+            user_id,
+            contact: [from_id]
+        })
+        return data
+    }
+    if(!senderUser.contact.includes(from_id)){
+        senderUser.contact.push(from_id)
+    }
+    return data
+}
 module.exports = {
-    GET
+    GET,
+    POST
 }
