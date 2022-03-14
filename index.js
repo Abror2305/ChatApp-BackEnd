@@ -4,13 +4,15 @@ const PORT = process.env.PORT || 4000
 
 const app = FakeExpress()
 
-const userAct = require("./src/controllers/userAct")
-const login = require("./src/controllers/login")
-const register = require("./src/controllers/register")
 const users = require("./src/controllers/users")
+const login = require("./src/controllers/login")
+const userAct = require("./src/controllers/userAct")
+const register = require("./src/controllers/register")
+const messages = require("./src/controllers/messages")
 
 app.get('/userAct',userAct.GET)
 app.get("/users",users.GET)
+app.get("/messages",messages.GET)
 app.post("/login", login)
 app.post("/register",register)
 
