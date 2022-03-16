@@ -1,6 +1,7 @@
 'use strict'
 
 const {read,isUser} = require("./../util")
+const {findUser, hashPasswd, write} = require("../util");
 
 const GET = async (req, res) => {
     try{
@@ -40,6 +41,39 @@ const GET = async (req, res) => {
         },403)
     }
 }
+async function DELETE(req, res) {
+    try {
+        res.setHeader("Access-Control-Allow-Origin", "*")
+        let users = read("users")
+        let {user, password} = await req.body
+
+
+        let user_id = isUser(user)
+        if (!user_id) throw new Error("Not User")
+
+        user = findUser(users, user_id)
+        if (user.password !== hashPasswd(password)) {
+            throw new Error("Incorrect password")
+        }
+        let userAct = read("userAct")
+        userAct = userAct.filter(el => el.user_id !== user_id)
+        user.username = "Deleted Account"
+        delete user.age
+        delete user.password
+        write("userAct",userAct)
+        write("users",users)
+
+        res.json({
+            message: "Account successfully deleted"
+        })
+    }
+    catch (e){
+        res.json({
+            message:e.message
+        },400)
+    }
+}
 module.exports = {
-    GET
+    GET,
+    DELETE
 }

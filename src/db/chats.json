@@ -52,5 +52,11 @@
         "message": "salom",
         "date": "2022-03-14T21:10:15.523Z",
         "from_id": 6
+    },
+    {
+        "user_id": 8,
+        "message": "users",
+        "date": "2022-03-16T20:29:21.592Z",
+        "from_id": 6
     }
 ]

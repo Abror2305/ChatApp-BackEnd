@@ -1,6 +1,6 @@
 'use strict'
 
-const {read, isUser,isCorrectId, write} = require("../util");
+const {read, isUser,isCorrectId, write, findUser} = require("../util");
 
 function GET(req, res){
     try {
@@ -9,7 +9,7 @@ function GET(req, res){
 
 
         let user = req.query
-        let from_id = +user.from_id
+        let from_id = Number(user.from_id)
         if(!from_id || isNaN(from_id)) throw new Error("from_id is invalid or not found")
 
         let user_id = isUser(user.user)
@@ -37,9 +37,10 @@ async function POST(req,res){
 
         if(!user_id) throw new Error("Not User")
         if(!message) throw new Error("Message is required")
-        if(isCorrectId(from_id)) throw new Error("Invalid from_id")
+        if(!isCorrectId(from_id)) throw new Error("Invalid from_id")
         if(user_id===from_id) throw new Error("You can't write to yourself")
 
+        from_id = Number(from_id)
         let chats = read("chats")
 
         let newChat = {
@@ -67,7 +68,7 @@ async function POST(req,res){
     }
 }
 function addAct(data,user_id,from_id){
-    let senderUser = data.find(el =>el.user_id ===user_id)
+    let senderUser = findUser(data,user_id)
 
     if(!senderUser){
         data.push({

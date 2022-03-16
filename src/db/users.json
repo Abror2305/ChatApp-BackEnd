@@ -3,48 +3,52 @@
         "user_id": 1,
         "username": "abror",
         "age": 15,
-        "password": "eyJhbGciOiJIUzI1NiJ9.cXdlcnR5dWlvcA.U-lxc0af1K5S6ppEZta-KzF9mmeQM0dBYajXNrtxZT4"
+        "password": "9a900403ac313ba27a1bc81f0932652b8020dac92c234d98fa0b06bf0040ecfd"
     },
     {
         "user_id": 2,
         "username": "abrorali",
         "age": "12",
-        "password": "eyJhbGciOiJIUzI1NiJ9.QWJyb3IyMDA2.TdDW0CgjMxMBrLt-tI5rDzdvWSg0-Z0pX4qCLIri49Y"
+        "password": "46f0a681258c2e50957ff79be2b8bfcee68ffb41374b5cf591863e3cfee884ad"
     },
     {
         "user_id": 3,
         "username": "abrorali2",
         "age": "12",
-        "password": "eyJhbGciOiJIUzI1NiJ9.MTIzNDU2Nzg.458CqIonMwyIY1HELMpP9xhH0A8RkfynZ-_fJWKS0Ro"
+        "password": "ef797c8118f02dfb649607dd5d3f8c7623048c9c063d532cc95c5ed7a898a64f"
     },
     {
         "user_id": 4,
         "username": "abroralisherov",
         "age": "12",
-        "password": "eyJhbGciOiJIUzI1NiJ9.QWJyb3IyMDA2.TdDW0CgjMxMBrLt-tI5rDzdvWSg0-Z0pX4qCLIri49Y"
+        "password": "46f0a681258c2e50957ff79be2b8bfcee68ffb41374b5cf591863e3cfee884ad"
     },
     {
         "user_id": 5,
         "username": "abror23",
         "age": "20",
-        "password": "eyJhbGciOiJIUzI1NiJ9.MTIzNDU2Nzg.458CqIonMwyIY1HELMpP9xhH0A8RkfynZ-_fJWKS0Ro"
+        "password": "46f0a681258c2e50957ff79be2b8bfcee68ffb41374b5cf591863e3cfee884ad"
     },
     {
         "user_id": 6,
         "username": "scott",
         "age": 28,
-        "password": "eyJhbGciOiJIUzI1NiJ9.c2NvdDk0OTQ.6SkErzFmF6qjsqGwCnQ_SowCSZStbUnC3wVX0-pZV3w"
+        "password": "a67b8ee41f5e3fc95c4095c0a8924685c6d4048931b8eb529ae8fb70f8b3c6df"
     },
     {
         "user_id": 7,
-        "username": "user",
-        "age": 20,
-        "password": "eyJhbGciOiJIUzI1NiJ9.MTIzNDU2Nzg.458CqIonMwyIY1HELMpP9xhH0A8RkfynZ-_fJWKS0Ro"
+        "username": "Deleted Account"
     },
     {
         "user_id": 8,
         "username": "asror",
         "age": 14,
-        "password": "eyJhbGciOiJIUzI1NiJ9.MTIzNDU2Nzg.458CqIonMwyIY1HELMpP9xhH0A8RkfynZ-_fJWKS0Ro"
+        "password": "ef797c8118f02dfb649607dd5d3f8c7623048c9c063d532cc95c5ed7a898a64f"
+    },
+    {
+        "user_id": 9,
+        "username": "user_2",
+        "age": 12,
+        "password": "ef797c8118f02dfb649607dd5d3f8c7623048c9c063d532cc95c5ed7a898a64f"
     }
 ]

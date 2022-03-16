@@ -1,5 +1,5 @@
 'use strict'
-const {read,hash} = require("../util")
+const {read,hash, hashPasswd} = require("../util")
 
 module.exports = async (req, res) => {
     try {
@@ -14,7 +14,7 @@ module.exports = async (req, res) => {
         if (!password || password.length > 20 || password.length < 6) {
             throw new Error("Invalid Password")
         }
-        password = hash(password)
+        password = hashPasswd(password)
 
         const users = read("users")
 
@@ -33,11 +33,11 @@ module.exports = async (req, res) => {
         return res.json({
             status: 401,
             message: "Incorrect username or password"
-        })
+        },401)
     } catch (e) {
         return res.json({
             status: 401,
             message: e.message
-        })
+        },401)
     }
 }

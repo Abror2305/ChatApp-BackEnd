@@ -1,5 +1,5 @@
 'use strict'
-const {read,hash,write} = require("../util")
+const {read,hash,write, hashPasswd} = require("../util")
 
 module.exports = async (req,res) => {
     try {
@@ -15,7 +15,7 @@ module.exports = async (req,res) => {
             throw new Error("This username is already taken")
         }
         if(!(/^(?=[a-zA-Z0-9._]{3,20}$)(?!.*[_.]{2})[^_.].*[^_.]$/.test(username))){
-            throw new Error("Incorect username")
+            throw new Error("Incorrect username")
         }
         if (!password || password.length < 6 || password.length > 32) {
             throw new Error("The password length must be more than 6 and less than 32")
@@ -30,7 +30,7 @@ module.exports = async (req,res) => {
             user_id: users.at(-1)?.user_id + 1 || 1,
             username,
             age,
-            password: hash(password)
+            password: hashPasswd(password)
         }
         users.push(newUser)
 

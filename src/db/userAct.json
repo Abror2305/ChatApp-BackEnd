@@ -4,7 +4,8 @@
         "contact": [
             2,
             3,
-            4
+            4,
+            7
         ]
     },
     {
@@ -34,13 +35,13 @@
         ]
     },
     {
-        "user_id": 7,
+        "user_id": 6,
         "contact": [
             8
         ]
     },
     {
-        "user_id": 6,
+        "user_id": 7,
         "contact": [
             8
         ]
