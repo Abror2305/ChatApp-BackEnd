@@ -37,7 +37,7 @@ async function POST(req,res){
 
         if(!user_id) throw new Error("Not User")
         if(!message) throw new Error("Message is required")
-        if(!isCorrectId(from_id)) throw new Error("Invalid from_id")
+        if(!isCorrectId(from_id)) throw new Error("Deleted Account or Invalid receiverId")
         if(user_id===from_id) throw new Error("You can't write to yourself")
 
         from_id = Number(from_id)

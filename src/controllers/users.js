@@ -18,9 +18,10 @@ const GET = async (req, res) => {
         let forUser = []
         for (let usr of users) {
             if(user_id === usr.user_id) {
-                username = usr.username
-                continue
+                username = usr.username;
+                continue;
             }
+            if(!usr.age) continue;
             forUser.push({
                 user_id: usr.user_id,
                 username: usr.username
@@ -30,8 +31,8 @@ const GET = async (req, res) => {
 
         res.json({
             status:200,
-            users: forUser,
-            username
+            username,
+            users: forUser
         })
     }
     catch (e) {
