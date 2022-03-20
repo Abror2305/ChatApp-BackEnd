@@ -13,18 +13,20 @@ const GET = async (req, res) => {
 
         if(!user_id) throw new Error("Not User")
 
-        let username;
+        let username,avatar;
 
         let forUser = []
         for (let usr of users) {
             if(user_id === usr.user_id) {
                 username = usr.username;
+                avatar = usr.avatar
                 continue;
             }
             if(!usr.age) continue;
             forUser.push({
                 user_id: usr.user_id,
-                username: usr.username
+                username: usr.username,
+                avatar: usr.avatar
             })
         }
 
@@ -32,6 +34,7 @@ const GET = async (req, res) => {
         res.json({
             status:200,
             username,
+            avatar,
             users: forUser
         })
     }
@@ -62,6 +65,7 @@ const DELETE = async (req, res) => {
         user.username = "Deleted Account"
         delete user.age
         delete user.password
+        user.avatar = "https://static10.tgstat.ru/channels/_0/fc/fc15c8d9f8fe6b79f9778a26e8e03fd4.jpg"
         write("userAct",userAct)
         write("users",users)
 

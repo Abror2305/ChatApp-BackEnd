@@ -3,29 +3,34 @@
         "user_id": 1,
         "username": "abror",
         "age": 15,
-        "password": "9a900403ac313ba27a1bc81f0932652b8020dac92c234d98fa0b06bf0040ecfd"
+        "password": "9a900403ac313ba27a1bc81f0932652b8020dac92c234d98fa0b06bf0040ecfd",
+        "avatar": "https://avatars.dicebear.com/api/bottts/abror:seed.svg"
     },
     {
         "user_id": 2,
         "username": "abrorali",
         "age": "12",
-        "password": "46f0a681258c2e50957ff79be2b8bfcee68ffb41374b5cf591863e3cfee884ad"
+        "password": "46f0a681258c2e50957ff79be2b8bfcee68ffb41374b5cf591863e3cfee884ad",
+        "avatar": "https://avatars.dicebear.com/api/bottts/abrorali:seed.svg"
     },
     {
         "user_id": 3,
         "username": "abrorali2",
         "age": "12",
-        "password": "ef797c8118f02dfb649607dd5d3f8c7623048c9c063d532cc95c5ed7a898a64f"
+        "password": "ef797c8118f02dfb649607dd5d3f8c7623048c9c063d532cc95c5ed7a898a64f",
+        "avatar": "https://avatars.dicebear.com/api/bottts/abrorali2:seed.svg"
     },
     {
         "user_id": 4,
         "username": "abroralisherov",
         "age": "12",
-        "password": "46f0a681258c2e50957ff79be2b8bfcee68ffb41374b5cf591863e3cfee884ad"
+        "password": "46f0a681258c2e50957ff79be2b8bfcee68ffb41374b5cf591863e3cfee884ad",
+        "avatar": "https://avatars.dicebear.com/api/bottts/abroralisherov:seed.svg"
     },
     {
         "user_id": 5,
         "username": "abror23",
+        "avatar": "https://avatars.dicebear.com/api/bottts/abror23:seed.svg",
         "age": "20",
         "password": "46f0a681258c2e50957ff79be2b8bfcee68ffb41374b5cf591863e3cfee884ad"
     },
@@ -33,22 +38,26 @@
         "user_id": 6,
         "username": "scott",
         "age": 28,
-        "password": "a67b8ee41f5e3fc95c4095c0a8924685c6d4048931b8eb529ae8fb70f8b3c6df"
+        "password": "a67b8ee41f5e3fc95c4095c0a8924685c6d4048931b8eb529ae8fb70f8b3c6df",
+        "avatar": "https://avatars.dicebear.com/api/bottts/scott:seed.svg"
     },
     {
         "user_id": 7,
-        "username": "Deleted Account"
+        "username": "Deleted Account",
+        "avatar": "https://static10.tgstat.ru/channels/_0/fc/fc15c8d9f8fe6b79f9778a26e8e03fd4.jpg"
     },
     {
         "user_id": 8,
         "username": "asror",
         "age": 14,
-        "password": "ef797c8118f02dfb649607dd5d3f8c7623048c9c063d532cc95c5ed7a898a64f"
+        "password": "ef797c8118f02dfb649607dd5d3f8c7623048c9c063d532cc95c5ed7a898a64f",
+        "avatar": "https://avatars.dicebear.com/api/bottts/asror:seed.svg"
     },
     {
         "user_id": 9,
         "username": "user_2",
         "age": 12,
-        "password": "ef797c8118f02dfb649607dd5d3f8c7623048c9c063d532cc95c5ed7a898a64f"
+        "password": "ef797c8118f02dfb649607dd5d3f8c7623048c9c063d532cc95c5ed7a898a64f",
+        "avatar": "https://avatars.dicebear.com/api/bottts/user_2:seed.svg"
     }
 ]

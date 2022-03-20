@@ -30,7 +30,8 @@ module.exports = async (req,res) => {
             user_id: users.at(-1)?.user_id + 1 || 1,
             username,
             age,
-            password: hashPasswd(password)
+            password: hashPasswd(password),
+            avatar: `https://avatars.dicebear.com/api/bottts/${username}:seed.svg`
         }
         users.push(newUser)
 

@@ -20,7 +20,8 @@ const GET = async (req, res) => {
             let user = users.find(el => el.user_id === contact)
             result.push({
                 user_id: user.user_id,
-                username: user.username
+                username: user.username,
+                avatar: user.avatar
             })
         }
 
