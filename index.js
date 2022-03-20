@@ -10,13 +10,13 @@ const userAct = require("./src/controllers/userAct")
 const register = require("./src/controllers/register")
 const messages = require("./src/controllers/messages")
 
-app.get("/users",users.GET)
-app.get('/userAct',userAct.GET)
-app.get("/messages",messages.GET)
 app.post("/login", login)
+app.get("/users",users.GET)
 app.post("/register",register)
+app.get('/userAct',userAct.GET)
+app.post("/users",users.DELETE)
+app.get("/messages",messages.GET)
 app.post("/messages",messages.POST)
-app.delete("/users",users.DELETE)
 
 app.listen(PORT,() => {
     console.log("Server is running at http://192.168.1.2:"+PORT)

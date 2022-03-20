@@ -14,7 +14,7 @@ const server = (req, res) => {
 
 	if(method !== 'GET') {
 		req.body = new Promise((resolve, reject) => {
-			let str = ''
+			let str = ""
 			req.on('data', (chunk) => str += chunk)
 			req.on('end', () => {
 				try {

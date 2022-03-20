@@ -12,18 +12,28 @@ const GET = async (req, res) => {
 
         if (!user_id) throw new Error("Not User")
 
-        let forUser = userAct.find(users => users.user_id === user_id)
-        users = users.filter(el => forUser.contact?.includes(el.user_id))
+        let contacts = userAct.find(users => users.user_id === user_id)?.contact
+
+        let result = []
+        if(!contacts) contacts = []
+        for (let contact of contacts) {
+            let user = users.find(el => el.user_id === contact)
+            result.push({
+                user_id: user.user_id,
+                username: user.username
+            })
+        }
+
         res.json({
             status: 200,
-            userAct: users
+            userAct: result
         })
 
     } catch (e) {
         return res.json({
             // status:403,
             message: e.message
-        },403)
+        },400)
     }
 }
 module.exports = {

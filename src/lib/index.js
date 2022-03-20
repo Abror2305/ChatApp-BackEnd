@@ -23,9 +23,9 @@ function Express () {
 		controllerFunctions['DELETE'][route] = callback
 	}
 
-	this.put = function (route, callback) {
-		controllerFunctions['PUT'] = controllerFunctions['PUT'] || {}
-		controllerFunctions['PUT'][route] = callback
+	this.options = function (route, callback) {
+		controllerFunctions['OPTIONS'] = controllerFunctions['OPTIONS'] || {}
+		controllerFunctions['OPTIONS'][route] = callback
 	}
 
 	this.set = function (key, value) {

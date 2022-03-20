@@ -42,9 +42,10 @@ const GET = async (req, res) => {
         },403)
     }
 }
-async function DELETE(req, res) {
+const DELETE = async (req, res) => {
     try {
         res.setHeader("Access-Control-Allow-Origin", "*")
+        res.setHeader("Access-Control-Allow-Headers", '*')
         let users = read("users")
         let {user, password} = await req.body
 

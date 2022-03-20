@@ -78,9 +78,15 @@ function addAct(data,user_id,from_id){
         return data
     }
     if(!senderUser.contact.includes(from_id)){
-        senderUser.contact.push(from_id)
+        senderUser.contact.unshift(from_id)
+        return data
     }
-    return data
+    let index = senderUser.contact.indexOf(from_id)
+    if(~index){
+        senderUser.contact.splice(index,1)
+        senderUser.contact.unshift(from_id)
+        return data
+    }
 }
 module.exports = {
     GET,
