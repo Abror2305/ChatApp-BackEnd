@@ -16,7 +16,9 @@ app.post("/register",register)
 app.get('/userAct',userAct.GET)
 app.post("/users",users.DELETE)
 app.get("/messages",messages.GET)
+app.delete("/users",users.DELETE)
 app.post("/messages",messages.POST)
+app.post("/message",messages.DELETE)
 
 app.listen(PORT,() => {
     console.log("Server is running at http://192.168.1.2:"+PORT)

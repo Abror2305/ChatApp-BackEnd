@@ -1,6 +1,13 @@
 'use strict'
 
-const {read, isUser,isCorrectId, write, findUser} = require("../util");
+const {read,
+    isUser,
+    isCorrectId,
+    write,
+    findUser,
+    addAct,
+    removeUserAct
+} = require("../util");
 
 function GET(req, res){
     try {
@@ -67,28 +74,41 @@ async function POST(req,res){
             message:e.message},400)
     }
 }
-function addAct(data,user_id,from_id){
-    let senderUser = findUser(data,user_id)
 
-    if(!senderUser){
-        data.push({
-            user_id,
-            contact: [from_id]
+async function DELETE(req,res){
+    try {
+        res.setHeader("Access-Control-Allow-Origin", "*")
+        let {user,from_id} = await req.body
+
+        let user_id = isUser(user)
+        if(!user_id) throw new Error("Not User")
+        if(!isCorrectId(from_id,false)) throw new Error("Incorrect from_id")
+
+        let chats = read("chats")
+        let userAct = read("userAct")
+
+        chats = chats.filter( el => !(el.user_id === user_id && el.from_id === from_id ||
+            el.user_id === from_id && el.from_id === user_id))
+
+        userAct = removeUserAct(userAct,user_id,from_id)
+        userAct = removeUserAct(userAct,from_id,user_id)
+
+        write("chats",chats)
+        write("userAct",userAct)
+
+        res.json({
+            message: "Messages successfully deleted"
         })
-        return data
     }
-    if(!senderUser.contact.includes(from_id)){
-        senderUser.contact.unshift(from_id)
-        return data
-    }
-    let index = senderUser.contact.indexOf(from_id)
-    if(~index){
-        senderUser.contact.splice(index,1)
-        senderUser.contact.unshift(from_id)
-        return data
+    catch (e) {
+        res.json({
+            message: e.message
+        },400)
     }
 }
+
 module.exports = {
     GET,
-    POST
+    POST,
+    DELETE
 }

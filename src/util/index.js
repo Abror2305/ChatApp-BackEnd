@@ -81,18 +81,48 @@ function isUser(token){
 /**
  *
  * @param id{Number}
+ * @param deletedAccount{boolean}
  * @returns {boolean}
  */
-function isCorrectId(id){
+function isCorrectId(id,deletedAccount=true){
     try {
         let users = read("users")
         if(!id || isNaN(+id)) return false
         let user = findUser(users,+id)
-        return !!(user?.password && user?.age);
+        if(deletedAccount) return !!(user?.password && user?.age);
+        return !!user
     }
     catch (e){
         return false
     }
+}
+function addAct(data,user_id,from_id){
+    let senderUser = findUser(data,user_id)
+
+    if(!senderUser){
+        data.push({
+            user_id,
+            contact: [from_id]
+        })
+        return data
+    }
+    if(!senderUser.contact.includes(from_id)){
+        senderUser.contact.unshift(from_id)
+        return data
+    }
+    let index = senderUser.contact.indexOf(from_id)
+    if(~index){
+        senderUser.contact.splice(index,1)
+        senderUser.contact.unshift(from_id)
+        return data
+    }
+}
+function removeUserAct(data,user_id,from_id){
+    let senderUser = findUser(data,user_id)
+    if(!senderUser) return data
+    let userIndex = senderUser.contact.indexOf(from_id)
+    senderUser.contact.splice(userIndex,1)
+    return data
 }
 
 /**
@@ -110,7 +140,9 @@ module.exports = {
     hash,
     write,
     isUser,
+    addAct,
     findUser,
     hashPasswd,
-    isCorrectId
+    isCorrectId,
+    removeUserAct
 }
